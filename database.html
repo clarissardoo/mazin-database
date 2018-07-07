@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon"  href="https://png.icons8.com/ios/50/000000/planet.png"/>
+<style>
+
+.content {
+	  	width: 400px;
+	    border: 2px solid blue;
+	    padding: 20px;
+	    overflow: hidden;
+	}
+
+.content img {
+	    margin-right: 25px;
+	    float: left;
+		cursor: pointer;
+	}
+	
+body {font-family: Arial;}
+.search-container {position: absolute;
+    top: 0px;
+    right: 0px}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Style the close button */
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.topright:hover {color: red;}
+</style>
+</head>
+<body>
+	<div class="content">
+	    <img src="https://png.icons8.com/ultraviolet/80/000000/planet.png"/ alt="" >
+	    <h3 style="font-size: 200%;">CLARITY</h3>
+	    <p>Welcome to Clarity, the Mazin Lab Database</p>
+	</div>​
+
+<p>Click on the x button in the top right corner to close the current tab:</p>
+				<div class="search-container">
+					<p>Scroll through the lists below, or enter a star name, run, or date into the search box.</p>
+				    <form action="/action_page.php">
+				      <input type="text" placeholder="Search..." name="search" size = 100px>
+				      <button type="submit"><i class="fa fa-search"></i></button>
+				    </form>
+				  </div>
+			</div>
+            </div>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'All')">All</button>
+  <button class="tablinks" onclick="openCity(event, 'Targets')" id="defaultOpen">Targets</button>
+  <button class="tablinks" onclick="openCity(event, 'Runs')">Runs</button>
+  <button class="tablinks" onclick="openCity(event, 'Dates')">Dates</button>
+</div>
+<div id="All" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>All</h3>
+ 
+</div>
+
+<div id="Targets" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>Targets</h3>
+  <ul><li>SAO61424</li>
+  <li>HR8799</li>
+  <li>Eps Eridani</li>
+  <li>SAO78135 (Propus)</li>
+  <li>SAO42642</li>
+  <li>SAO82875</li>
+  <li>HD77407</li>
+  <li>SAO100725</li>
+  <li>Tau Boo</li>
+  <li>Candidate 1</li>
+  <li>HD114174</li>
+  <li>SAO65921</li>
+  <li>SAO65890</li>
+  <li>HD91782</li>
+  <li>HD148112</li>
+  <li>SAO83893</li>
+  <li>SAO90440 (32 Peg)</li>
+  <li>SAO90717</li>
+  <li>SAO108402</li>
+  <li>SAO54058 (Delta And)</li>
+  <li>SAO112345 (HD32297)</li>
+  <li>SAO041363</li>
+  <li>SAO 37734 (Gamma And)</li>
+  <li>SAO44531</li>
+  <li>Vega</li>
+  <li>Omega Her</li>
+  <li>SAO47913</li>
+  <li>WhiteLight</li>
+</ul>
+  
+  
+</div>
+
+<div id="Runs" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>Runs</h3>
+  <ul>
+	  <li>2016B</li>
+	  <li>2017A</li>
+	  <li>2017B</li>
+	  <li>2018A</li>
+  </ul> 
+</div>
+
+<div id="Dates" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>Dates</h3>
+  <ul>
+	  <li>November 21st, 2016</li>
+	  <li>November 22nd, 2016</li>
+	  <li>April 7th, 2017</li>
+	  <li>April 8th, 2017</li>
+	  <li>April 9th, 2017</li>
+	  <li>April 10th, 2017</li>
+	  <li>October 3rd, 2017</li>
+	  <li>October 4th, 2017</li>
+	  <li>October 5th, 2017</li>
+	  <li>October 6th, 2017</li>
+	  <li>May 23rd, 2018</li>
+	  <li>May 24th, 2018</li>
+	  <li>May 27th, 2018</li>
+	  <li>May 28th, 2018</li>
+	  <li>May 29th, 2018</li>
+	  <li>May 30th, 2018</li>
+	  
+  </ul>
+  <p></p>
+</div>
+
+<script>
+function openCity(evt, infoName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(infoName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
