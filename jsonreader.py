@@ -74,21 +74,4 @@ for recordYear in filelist:
 		prettyPrintList(bigList,recordYear)
 		
 
-'''with open('20'+run+'J.json') as datarunner:
-	data1 = json.load(datarunner)
-
-	for entry in data1:
-		bigList = [[] for _ in range(len(makeList(entry.get('Filters'))))]
-		if entry.get("Target") == name:
-			for elem in entry:
-							#print(data1[1])
-					myStr = elem + ": \n\t"
-							#print(myStr)
-					myList = makeList(entry.get(elem))
-					for i in range(0, len(myList)):
-						bigList[i].append(myStr+myList[i])
-			break
-prettyPrintList(bigList)'''
-
-
 
