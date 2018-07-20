@@ -55,17 +55,19 @@ for recordYear in filelist:
 	#print("reading")
 	with open(recordYear+'J.json') as datarunner:
 		data1 = json.load(datarunner)
+
+
 		bigList = []
 		for entry in data1:
 			#
 
 			if entry.get("Target") == name:
 				#print("BINGO")
-				bigList = [[] for _ in range(len(makeList(entry.get('Filters'))))]
+				bigList = [[] for _ in range(len(makeList(entry.get('Filters').replace("<br />", "\n"))))]
 				#print(bigList)
 				for elem in entry:
 						myStr = elem + ": \n\t"
-						myList = makeList(entry.get(elem))
+						myList = makeList(entry.get(elem).replace("<br />", "\n"))
 
 						for i in range(0, len(myList)):
 							bigList[i].append(myStr+myList[i])
