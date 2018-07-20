@@ -6,22 +6,29 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-	return render_template('meme.html')
+	return render_template('database.html')
 	#return send_file(os.path.join(app.config['/'], 'database.html'))
 
 
 @app.route('/finder')
 def finder():
-
-	filelist = ['2016B', '2017A', '2017B', '2018A']
+	filelist = ('2016B', '2017A', '2017B', '2018A')
+	data = []
 	for recordYear in filelist:
-			with open(recordYear+'J.json') as datarunner:
+		with open(recordYear+'J.json') as datarunner:
 				data1 = json.load(datarunner)
-				return (json.dumps(data1[1]))
-				#return redirect(url_for('meme')
-				#return(json.dumps(data1[0]))
-				#print(data1)
-				#return('\n'.join('{}{}'.format(key, val) for key, val in data1[3].items()))
+		data.append(data1)	
+		bigList = []
+		for entry in data:
+			#
+
+			if entry.get("Target") == "HR8799":
+				return(json.dumps(entry))
+
+	#return redirect(url_for('meme')
+	#return(json.dumps(data1[0]))
+	#print(data1)
+	#return('\n'.join('{}{}'.format(key, val) for key, val in data1[3].items()))
 
 
 if __name__ == '__main__':
