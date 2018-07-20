@@ -2,7 +2,7 @@ import os
 from flask import Flask, send_file, render_template
 import json
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
 
 @app.route('/')
 def homepage():
@@ -12,15 +12,12 @@ def homepage():
 
 @app.route('/finder')
 def finder():
-	runs = ['2016B', '2017A', '2017B', '2018A']
-	file =[]
-	for file in runs:
-		for i in range(0, len(runs)):
-			file[i].append(runs[i])
-		return(file)
-		#with open(file +'J.json') as datarunner:
-		#	data = json.load(datarunner)
-		#	return (json.dumps(data[1]))
+
+	filelist = ['2016B', '2017A', '2017B', '2018A']
+	for recordYear in filelist:
+			with open(recordYear+'J.json') as datarunner:
+				data1 = json.load(datarunner)
+				return (json.dumps(data1[1]))
 				#return redirect(url_for('meme')
 				#return(json.dumps(data1[0]))
 				#print(data1)
